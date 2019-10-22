@@ -5,4 +5,9 @@ public class OS extends Development implements Report {
     public void report() {
         System.out.println("This is report from OS");
     }
+
+    @Override
+    public String toString() {
+        return "This is report from OS";
+    }
 }

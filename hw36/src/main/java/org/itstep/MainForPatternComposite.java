@@ -28,11 +28,22 @@ public class MainForPatternComposite {
         ms.add(market);
         ms.add(development);
         ms.report();
+        System.out.println("---------------------");
         market.report();
-        ms.remove(hh);
-        ms.remove(development);
-        market.remove(uk);
-        System.out.println("------------------");
-        ms.report();
+
+        System.out.println("******************");
+        Iterator iterator =ms.getIterator();
+        Iterator iterator1 = development.getIterator();
+        Iterator iterator2 = market.getIterator();
+
+        while (iterator.hasNext()){
+           System.out.println(iterator.next());
+        }
+        while (iterator1.hasNext()){
+            System.out.println(iterator1.next());
+        }
+        while (iterator2.hasNext()){
+            System.out.println(iterator2.next());
+        }
     }
 }

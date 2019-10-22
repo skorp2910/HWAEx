@@ -5,4 +5,9 @@ public class Office extends Development implements Report {
     public void report() {
         System.out.println("This is report from Office");
     }
+
+    @Override
+    public String toString() {
+        return "This is report from Office";
+    }
 }
