@@ -13,8 +13,7 @@ public class MS implements Report {
 
         @Override
         public boolean hasNext() {
-            if (ind < reports.size()) return true;
-            return false;
+            return ind < reports.size();
         }
 
         @Override
