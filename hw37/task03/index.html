@@ -1,57 +1,80 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <title>HTML Tutorial</title>
-   <style>
-       .footer{
-           color: darkcyan;background-color: lightgray;margin: 2px
-       }
-       abbr{
-       border-bottom: 0.5px dashed
-       }
-       .colorBachgr{
-           color: crimson;background-color: lightgray
-       }
-   </style>
+    <style>
+        .footer {
+            color: darkcyan;
+            background-color: lightgray;
+            margin: 2px
+        }
+
+        abbr {
+            border-bottom: 0.5px dashed
+        }
+
+        .colorBachgr {
+            color: crimson;
+            background-color: lightgray
+        }
+    </style>
 
 </head>
+
 <body style="padding: 20px">
-<br/>
-<h1 style="text-align: center">HTML Tutorial</h1>
-<hr/>
-<h2 style="text-align: center">What is HTML?</h2>
+    <br />
+    <h1 style="text-align: center">HTML Tutorial</h1>
+    <hr />
+    <h2 style="text-align: center">What is HTML?</h2>
 
-<p><span style="font-weight: bold">Hypertext Markup Language (<abbr>HTML</abbr>)</span> is the standard markup language for creating web pages and web<br>
-    applications.<br></p>
+    <!-- К тегу abbr часто добавляют аттрибут title -->
+    <p><span style="font-weight: bold">Hypertext Markup Language (<abbr
+                title="Hypertext Markup Language">HTML</abbr>)</span> is the standard markup
+        language for creating web pages and web<br>
+        applications.<br></p>
 
-<p>Web browsers receive <abbr>HTML</abbr> documents from a web server or from local storage and render the documents<br>
-    into multimedia web pages. <abbr>HTML</abbr> describes the structure of a web page semantically and originally<br>
-    included cues for the appearance of the document.<br/><br/>
+    <p>Web browsers receive <abbr>HTML</abbr> documents from a web server or from local storage and render the
+        documents<br>
+        into multimedia web pages. <abbr>HTML</abbr> describes the structure of a web page semantically and
+        originally<br>
+        included cues for the appearance of the document.<br /><br />
 
-    <abbr>HTML</abbr> elements are the building blocks of <abbr>HTML</abbr> pages. With <abbr>HTML</abbr> constructs, images and other objects<br>
-    such as interactive forms may be embedded into the rendered page. <abbr>HTML</abbr> provides a means to create<br>
-    structured documents by denoting structural semantics for text such as headings, paragraphs, lists, links,<br>
-    quotes and other items. <abbr>HTML</abbr> elements are delineated by <em>tags</em>, written using angle brackets. Tags such as<br>
-    <span class="colorBachgr">‹img /›</span> and <span class="colorBachgr">‹input /›</span> directly introduce content into the page. Other tags such as <span class="colorBachgr">‹p›</span> surround and<br>
-    provide information about document text and may include other tags as sub-elements. Browsers do not<br>
-    display the <abbr>HTML</abbr> tags, but use them to interpret the content of the page.</p>
-<hr/>
+        <abbr>HTML</abbr> elements are the building blocks of <abbr>HTML</abbr> pages. With <abbr>HTML</abbr>
+        constructs, images and other objects<br>
+        such as interactive forms may be embedded into the rendered page. <abbr>HTML</abbr> provides a means to
+        create<br>
+        structured documents by denoting structural semantics for text such as headings, paragraphs, lists, links,<br>
+        quotes and other items. <abbr>HTML</abbr> elements are delineated by <em>tags</em>, written using angle
+        brackets. Tags such as<br>
+        <!-- а здесь лучше все же использовать сущьности -->
+        <span class="colorBachgr">&lt;img /&gt;</span> and <span class="colorBachgr">‹input /›</span> directly introduce
+        content into the page. Other tags such as <span class="colorBachgr">‹p›</span> surround and<br>
+        provide information about document text and may include other tags as sub-elements. Browsers do not<br>
+        display the <abbr>HTML</abbr> tags, but use them to interpret the content of the page.
+    </p>
+    <hr />
     <h2 style="text-align: center">Markup</h2>
 
-<abbr style="border-bottom: 0.5px dashed;">HTML</abbr> markup consists of several key components, including those called <em>tags</em> (and their <em>attributes</em>),<br>
-character-based <em>data types</em>, <em>character references</em> and <em>entity references</em>. <abbr>HTML</abbr> tags most commonly come in<br>
-pairs like <span class="colorBachgr">‹h1›</span> and <span class="colorBachgr">‹/h1›</span>, although some represent <em>empty elements</em> and so are unpaired, for example<br>
-<span class="colorBachgr">‹img›</span>. The first tag in such a pair is the <em>start tag</em>, and the second is the <em>end tag</em> (they are also called <em>opening</em><br>
-<em>tags</em> and <em>closing tags</em>).
+    <abbr style="border-bottom: 0.5px dashed;">HTML</abbr> markup consists of several key components, including those
+    called <em>tags</em> (and their <em>attributes</em>),<br>
+    character-based <em>data types</em>, <em>character references</em> and <em>entity references</em>. <abbr>HTML</abbr>
+    tags most commonly come in<br>
+    pairs like <span class="colorBachgr">‹h1›</span> and <span class="colorBachgr">‹/h1›</span>, although some represent
+    <em>empty elements</em> and so are unpaired, for example<br>
+    <span class="colorBachgr">‹img›</span>. The first tag in such a pair is the <em>start tag</em>, and the second is
+    the <em>end tag</em> (they are also called <em>opening</em><br>
+    <em>tags</em> and <em>closing tags</em>).
 
 
-<p>Another important component is the <abbr>HTML</abbr> <em>document type declaration</em>, which triggers standards mode<br>
-    rendering.</p>
+    <p>Another important component is the <abbr>HTML</abbr> <em>document type declaration</em>, which triggers standards
+        mode<br>
+        rendering.</p>
 
-<p>The following is an example of the classic "Hello, World!" program:</p>
+    <p>The following is an example of the classic "Hello, World!" program:</p>
 
-<pre style="padding: 15px" class="colorBachgr"><code>
+    <pre style="padding: 15px" class="colorBachgr"><code>
     ‹!DOCTYPE html›
     ‹html›
         ‹head›
@@ -61,17 +84,18 @@ pairs like <span class="colorBachgr">‹h1›</span> and <span class="colorBachg
             ‹p›<span style="color: black">Hello world!</span>‹/p›
         ‹/body›
     ‹/html›</code></pre>
-<hr/>
+    <hr />
     <small>
         <span style="font-weight: bolder">Tags:</span>
-        <span class="footer">CodingScripting  </span>
-        <span class="footer">head  </span>
-        <span class="footer">HTML  </span>
-        <span class="footer">Introduction to HTML  </span>
-        <span class="footer">Landing  </span>
-        <span class="footer">Links semantics  </span>
-        <span class="footer">Structure  </span>
-        <span class="footer">Text  </span>
+        <span class="footer">CodingScripting </span>
+        <span class="footer">head </span>
+        <span class="footer">HTML </span>
+        <span class="footer">Introduction to HTML </span>
+        <span class="footer">Landing </span>
+        <span class="footer">Links semantics </span>
+        <span class="footer">Structure </span>
+        <span class="footer">Text </span>
     </small>
 </body>
+
 </html>
