@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        main {
+            padding: 0 15px 15px 20px;
+        }
+
+        .deleteElem {
+            background-color: darkgrey;
+            list-style: inside url("../icons/checked_16.png");
+            /*text-decoration: line-through;*/
+        }
+
+        .evenElem {
+            background-color: #455ac7;
+            /*list-style: inside url("../icons/unchecked_16.png");*/
+        }
+
+        .oddElem {
+            background-color: #7b8cc7;
+            /*list-style: inside url("../icons/unchecked_16.png");*/
+        }
+
+        ul {
+            list-style: none;
+            padding: 0 20px 20px 0;
+        }
+
+        li {
+            padding: 10px 10px 10px 30px;
+            list-style: inside url("../icons/unchecked_16.png");
+        }
+
+        span {
+            color: #a8020c;
+            font-weight: bolder;
+            font-size: 20px;
+        }
+    </style>
+</head>
+<body>
+<main>
+    <h2>My To Do List</h2>
+    <ul>
+        <li class="oddElem">&nbsp;&nbsp;Hit the gum <span>&nbsp;&nbsp;&nbsp; &times;</span></li>
+        <li class="deleteElem">&nbsp;&nbsp;
+            <del>Pay bills</del>
+            <span>&nbsp;&nbsp;&nbsp; &times;</span></li>
+        <li class="oddElem">&nbsp;&nbsp;Meet John <span>&nbsp;&nbsp;&nbsp; &times;</span></li>
+        <li class="evenElem">&nbsp;&nbsp;Buy eggs <span>&nbsp;&nbsp;&nbsp; &times;</span></li>
+        <li class="deleteElem">&nbsp;&nbsp;<del>Read a book</del>
+            <span>&nbsp;&nbsp;&nbsp; &times;</span></li>
+        <li class="evenElem">&nbsp;&nbsp;Organize office <span>&nbsp;&nbsp;&nbsp; &times;</span></li>
+        <li class="oddElem">&nbsp;&nbsp;Eat dinner <span>&nbsp;&nbsp;&nbsp; &times;</span></li>
+        <li class="evenElem">&nbsp;&nbsp;Buy apples <span>&nbsp;&nbsp;&nbsp; &times;</span></li>
+        <li class="oddElem">&nbsp;&nbsp;Meet George <span>&nbsp;&nbsp;&nbsp; &times;</span></li>
+        <li class="evenElem">&nbsp;&nbsp;Feed the cat <span>&nbsp;&nbsp;&nbsp; &times;</span></li>
+        <li class="deleteElem">&nbsp;&nbsp;<del>Write a letter</del>
+            <span>&nbsp;&nbsp;&nbsp; &times;</span></li>
+        <li class="evenElem">&nbsp;&nbsp;Run 1 km <span>&nbsp;&nbsp;&nbsp; &times;</span></li>
+    </ul>
+</main>
+</body>
+</html>
