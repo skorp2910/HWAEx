@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>PageWithFooter</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            color: white;
+        }
+
+        footer {
+            background-color: darkslategrey;
+            margin: 20px;
+        }
+
+        hr {
+            width: 90%;
+            margin: 0.5% 5%;
+            clear: both;
+        }
+
+        ul {
+            list-style-type: none;
+            line-height: 1.5;
+        }
+
+        .firstUl, .secondUl {
+            width: 10%;
+            height: 30%;
+            margin: 55px 10px 10px 10%;
+            float: left;
+        }
+
+        .secondUl {
+            margin-left: 25%;
+        }
+
+        address {
+            text-align: center;
+            margin: 20px 0 30px 0;
+            padding: 1% 0 4% 0;
+        }
+
+        .picture {
+
+            float: right;
+            margin: 75px 170px 40px 5px;
+            text-align: center;
+        }
+
+        a.fbImag, a.InstImag, a.YTImag {
+            display: inline-block;
+            background-image: url("../images/fb_gray.png");
+            background-size: cover;
+            width: 40px;
+            height: 40px;
+            margin: 10px;
+        }
+
+        a.YTImag {
+            background-image: url("../images/youtube_gray.png");
+        }
+
+        a.InstImag {
+            background-image: url("../images/insta_gray.png");
+        }
+
+        a.fbImag:hover {
+            background-image: url("../images/fb.png");
+        }
+
+        a.InstImag:hover {
+            background-image: url("../images/insta.png");
+        }
+
+        a, li:hover {
+            cursor: pointer;
+        }
+
+        a.YTImag:hover {
+            background-image: url("../images/youtube.png");
+        }
+
+        li:hover {
+            text-decoration: underline;
+        }
+
+    </style>
+</head>
+<body>
+<footer>
+    <ul class="firstUl">
+        <li>Home</li>
+        <li>About</li>
+        <li>Gallery</li>
+        <li>News</li>
+    </ul>
+    <ul class="secondUl">
+        <li>Blog</li>
+        <li>FAQ</li>
+        <li>Contacts</li>
+        <li>Privacy & cookies</li>
+    </ul>
+    <div class="picture">
+        <a href="https://www.facebook.com" target="_blank" class="fbImag"></a>
+        <a href="https://www.instagram.com/?hl=ru" target="_blank" class="InstImag"> </a>
+        <a href="https://www.youtube.com" target="_blank" class="YTImag"></a>
+    </div>
+    <hr>
+    <address>Copyright &copy; Company 2018 - 2019</address>
+</footer>
+</body>
+</html>
