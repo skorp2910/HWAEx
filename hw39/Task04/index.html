@@ -60,6 +60,8 @@
             width: 40px;
             height: 40px;
             margin: 10px;
+
+            transition: all 1s ease;
         }
 
         a.YTImag {
@@ -68,14 +70,19 @@
 
         a.InstImag {
             background-image: url("../images/insta_gray.png");
+
         }
 
         a.fbImag:hover {
             background-image: url("../images/fb.png");
+            /*transform: scale(1.5);*/
+            transform: rotate(360deg) scale(1.5);
         }
 
         a.InstImag:hover {
             background-image: url("../images/insta.png");
+            /*transform: scale(1.5);*/
+            background-position: 0 -40px;
         }
 
         a, li:hover {
@@ -84,6 +91,8 @@
 
         a.YTImag:hover {
             background-image: url("../images/youtube.png");
+            /*transform: scale(0,1);*/
+            transform: scale(1.5);
         }
 
         li:hover {
