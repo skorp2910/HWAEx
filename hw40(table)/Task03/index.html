@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>PlaneSubscription</title>
+    <style>
+        body {
+            margin: 40px;
+        }
+
+        main {
+            margin: 10px;
+        }
+
+        .window {
+            display: inline-block;
+            text-align: center;
+            border-radius: 15px;
+            width: 21%;
+            height: 50%;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+            margin: 10px;
+            background-color: white;
+            transition: 1s;
+        }
+
+        .window:hover {
+            cursor: pointer;
+            transition: 1s;
+            transform: scale(1.25);
+        }
+
+        .title {
+            font-size: large;
+            font-weight: bold;
+            padding-top: 10px;
+        }
+
+        .price {
+            padding-top: 10px;
+            font-size: xx-large;
+            font-weight: bold;
+        }
+
+        .term {
+            color: #cccccc;
+            font-weight: bold;
+        }
+
+        .text {
+            font-weight: bold;
+            font-size: small;
+            line-height: 1.8;
+        }
+
+        button {
+            color: white;
+            border-radius: 10px;
+            width: 42%;
+            height: 35px;
+            border: none;
+            margin: 20px 0;
+        }
+
+        hr {
+            border: none;
+            height: 2px;
+        }
+
+        .bcolorRed {
+            background-color: red;
+        }
+
+        .bcolorBlue {
+            background-color: #455ac7;
+        }
+
+        .bcolorOrange {
+            background-color: #cc8c5b;
+        }
+
+        .bcolorGreen {
+            background-color: #45cc56;
+        }
+    </style>
+</head>
+<body>
+<main>
+    <div class="window">
+        <p class="title">ENTERPRISE</p>
+        <hr class="bcolorRed">
+        <div class="price">$69</div>
+        <p class="term">per month</p>
+        <div class="text">
+            10GB disk space<br>
+            100GB monthly bandwidth<br>
+            20 email accounts<br>
+            Unlimited subdomens
+        </div>
+        <button class="button bcolorRed">
+            BUY
+        </button>
+    </div>
+
+    <div class="window">
+        <p class="title">PROFESSIONAL</p>
+        <hr class="bcolorOrange">
+        <div class="price">$29</div>
+        <p class="term">per month</p>
+        <div class="text">
+            5GB disk space<br>
+            60GB monthly bandwidth<br>
+            10 email accounts<br>
+            Unlimited subdomens
+        </div>
+        <button class="button bcolorOrange">
+            BUY
+        </button>
+    </div>
+
+    <div class="window">
+        <p class="title">STANDARD</p>
+        <hr class="bcolorBlue">
+        <div class="price">$19</div>
+        <p class="term">per month</p>
+        <div class="text">
+            3GB disk space<br>
+            30GB monthly bandwidth<br>
+            5 email accounts<br>
+            Unlimited subdomens
+        </div>
+        <button class="button bcolorBlue">
+            BUY
+        </button>
+    </div>
+
+    <div class="window">
+        <p class="title">BASIC</p>
+        <hr class="bcolorGreen">
+        <div class="price">$9</div>
+        <p class="term">per month</p>
+        <div class="text">
+            1GB disk space<br>
+            10GB monthly bandwidth<br>
+            2 email accounts<br>
+            Unlimited subdomens
+        </div>
+        <button class="button bcolorGreen">
+            BUY
+        </button>
+    </div>
+</main>
+</body>
+</html>
