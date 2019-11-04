@@ -1,0 +1,59 @@
+.menu {
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 6%;
+    background-color: darkgrey;
+    padding: 0 6px;
+    transition: 1s;
+}
+
+body {
+    float: left;
+    margin: 0;
+}
+
+.menu:hover {
+    width: 190px;
+    cursor: pointer;
+    transition: 1s;
+    padding: 0;
+}
+
+.menu:hover span {
+    display: inline-block;
+}
+
+.imgMenu:hover {
+    background-color: dimgray;
+    transition-duration: 1s;
+}
+
+img {
+    vertical-align: middle;
+    margin: 30px 2%;
+    width: 50px;
+}
+
+h5 {
+    color: white;
+    text-align: left;
+    margin: 20px 0 10px 5%;
+}
+
+h3 {
+    text-align: left;
+}
+
+.text {
+    text-align: left;
+    margin: 30px 10px 0 140px;
+    width: 80%;
+}
+
+span {
+    transition-duration: 1s;
+    display: none;
+    color: white;
+}
