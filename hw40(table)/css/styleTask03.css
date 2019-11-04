@@ -61,18 +61,18 @@ hr {
     height: 2px;
 }
 
-.bcolorRed {
+.bcolor-red {
     background-color: red;
 }
 
-.bcolorBlue {
+.bcolor-blue {
     background-color: #455ac7;
 }
 
-.bcolorOrange {
+.bcolor-orange {
     background-color: #cc8c5b;
 }
 
-.bcolorGreen {
+.bcolor-green {
     background-color: #45cc56;
 }
