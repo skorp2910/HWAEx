@@ -1,0 +1,133 @@
+body {
+    margin: 0;
+}
+
+main {
+    margin: 10px;
+    height: 100%;
+}
+
+.checkForm {
+    margin: 25px 0 0 25px;
+}
+
+.butBack{
+    color: white;
+    background: yellow;
+    border: 1px solid navy;
+    border-radius: 10px;
+    margin-left: 300px;
+    height: 30px;
+    width: 56px;
+    text-align: center;
+    padding-top: 7px;
+}
+.butBack:focus{
+    outline: none;
+}
+
+img {
+    width: 24px;
+}
+
+input, select {
+    padding: 5px;
+    margin: 5px 0;
+    border: 0;
+    border-bottom: 1px solid grey;
+}
+
+hr {
+    margin: 35px -10px;
+}
+
+#butSub {
+    color: white;
+    width: 150px;
+    padding: 8px 48px;
+    background: #0a9a77;
+    border: none;
+    margin-top: 15px;
+    margin-left: 80%;
+}
+
+
+@media screen and (min-width: 900px) {
+
+    .regForm {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+    }
+
+    .reg1, .personalDetails {
+        width: 50%;
+    }
+
+    #fName, #LName, #gender, #date {
+        width: 47%;
+    }
+
+    #gender, #date {
+        width: 48%;
+    }
+
+    #userName, #userEmail {
+        width: 90%;
+    }
+
+    #userPassword, #confirmPassword {
+        width: 43%;
+    }
+}
+
+@media screen and (min-width: 600px) and (max-width: 900px) {
+    .regForm {
+        flex-wrap: wrap;
+    }
+
+    .reg1, .personalDetails {
+        width: 100%;
+    }
+
+    #gender, #date, #fName, #LName {
+        width: 46%;
+    }
+
+    #userName, #userEmail {
+        width: 90%;
+    }
+
+    #userPassword, #confirmPassword {
+        width: 44%;
+    }
+
+    #butSub {
+        margin-left: 70%;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .reg1, .personalDetails, #gender, #date, #fName, #LName, #confirmPassword {
+        width: 98%;
+    }
+
+    #userName, #userEmail, #userPassword {
+        width: 90%;
+    }
+
+    #confirmPassword {
+        width: 90%;
+        margin-left: 5.5%;
+    }
+
+    #gender {
+        width: 100%;
+    }
+
+    #butSub {
+        margin-left: 60%;
+    }
+}
+
+

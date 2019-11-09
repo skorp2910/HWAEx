@@ -1,0 +1,86 @@
+form {
+    position: relative;
+    margin: 0 30px 20px 50px;
+    padding: 100px 0 0 50px;
+    height: 280px;
+    width: 500px;
+    border-radius: 10px;
+    background: #30e7ff;
+    z-index: 1;
+    top: -50px;
+    overflow: hidden;
+}
+.butBack{
+    color: white;
+    background: yellow;
+    border: 1px solid navy;
+    border-radius: 10px;
+    margin-left: 300px;
+    height: 30px;
+    width: 56px;
+    text-align: center;
+    padding-top: 7px;
+}
+.butBack:focus{
+    outline: none;
+}
+img {
+    position: relative;
+    height: 200px;
+    z-index: 3;
+    bottom: 250px;
+    left: 400px;
+    object-position: 58px 40px;
+    top: -309px;
+    background: #30e7ff;
+    border-radius: 10px;
+}
+
+main {
+    background: white;
+}
+
+label {
+    font-size: small;
+}
+
+p {
+    position: relative;
+    z-index: 2;
+    line-height: 45px;
+    padding-left: 40px;
+    font-weight: bold;
+    color: white;
+    height: 45px;
+    width: 400px;
+    background: #cc401e;
+    top: 45px;
+    left: 30px;
+}
+
+.inputField {
+    width: 57%;
+}
+
+input {
+    background: #35ccc3;
+    padding: 7px;
+    margin: 5px 0;
+    border: 0;
+    border-bottom: 1px solid black;
+}
+
+#month, #year, #cvv {
+    width: 70px;
+}
+
+.footer {
+    width: 59%;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+.block {
+    margin: 15px 0;
+}

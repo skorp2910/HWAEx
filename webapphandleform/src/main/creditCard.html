@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Credit card</title>
+    <link rel="stylesheet" href="./css/styleForTask01.css">
+</head>
+<body>
+<main>
+    <p>CREDIT CARD DETAILS</p>
+    <form>
+        <div class="container">
+            <div class="block">
+                <label>Card Number<br>
+                    <input class="inputField" type="number" required name="number card"
+                           placeholder="1234 5678 9012 3456">
+                </label><br>
+            </div>
+            <div class="block">
+                <label>Name On Card<br>
+                    <input class="inputField" type="text" required name="name on card" placeholder="Name Sumame">
+                </label><br>
+            </div>
+            <div class="block">
+                <div class="footer">
+                    <div>
+                        <label>Expiry Date <br>
+                            <input id="month" type="number" min="1" max="12" name="month" placeholder="02" required>
+                        </label>
+                    </div>
+                    <div>
+                        <input type="number" id="year" min="1998" max="2023" name="year" placeholder="2017"
+                               required>
+                        <label for="year"></label>
+                    </div>
+                    <div>
+                        <label>CVV/CVN <br>
+                            <input id="cvv" type="password" maxlength="3" minlength="3" required placeholder="***">
+                        </label>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+    <div class="butBack">
+        <a href="index.html">Back</a>
+    </div>
+    <div class="img">
+        <img src="./images/moon_flag.png" alt="flag">
+    </div>
+
+</main>
+</body>
+</html>

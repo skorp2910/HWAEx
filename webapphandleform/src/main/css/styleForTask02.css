@@ -1,0 +1,188 @@
+main {
+    margin: 30px 20px;
+}
+
+.radioChecked, .radioUnChecked {
+    background-color: green;
+}
+
+h4 {
+    margin-bottom: 7px;
+}
+
+.block {
+    margin: 15px 0;
+}
+
+.invalid {
+    color: red;
+    background: url("../images/invalid.png") no-repeat 190px;
+    background-size: 15px;
+}
+
+.static {
+    color: grey;
+}
+
+.static, .valid, .invalid {
+    height: 30px;
+    padding-left: 15px;
+    border: 1px solid;
+    border-radius: 5px;
+    width: 200px;
+}
+
+.valid {
+    color: green;
+    background: url("../images/valid.png") no-repeat 190px;
+    background-size: 15px;
+}
+
+.butBack{
+    color: white;
+    background: yellow;
+    border: 1px solid navy;
+    border-radius: 10px;
+    margin-left: 300px;
+    height: 30px;
+    width: 56px;
+    text-align: center;
+    padding-top: 7px;
+}
+.butBack:focus{
+    outline: none;
+}
+input[type="radio"] {
+    display: none;
+}
+
+input[type="radio"] + label span {
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    margin: 0 5px 0 15px;
+    background: white;
+    border-radius: 50%;
+    border: 1px solid green;
+    cursor: pointer;
+}
+
+input[type="radio"]:checked + label span {
+    background: green;
+    width: 10px;
+    height: 10px;
+    border: 5px double white;
+    margin-bottom: -3px;
+}
+
+#textarea {
+    width: 500px;
+    height: 100px;
+}
+
+input[type="button"] {
+    color: white;
+    height: 30px;
+    width: 75px;
+    border-radius: 5px;
+    margin-right: 10px;
+    border: none;
+}
+
+input[type="button"]:hover {
+    background: red;
+    cursor: pointer;
+    transform: scale(1.4);
+}
+
+.btnGreen {
+    background: #52ca83;
+}
+
+.btnDarkGreen {
+    background: #0a9a77;
+}
+
+.btnPink {
+    background: #ca2470;
+}
+
+.btnDarkRed {
+    background: #a7220d;
+}
+
+.btnGray {
+    background: grey;
+}
+
+input[type="button"].btnCircle {
+    color: white;
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+    margin-right: 10px;
+    border: none;
+}
+
+input[type="button"].btnCircle:hover {
+    background: red;
+    transform: scale(1.4);
+}
+
+input[type="button"].btnCircleGreen {
+    background: #52ca83;
+}
+
+input[type="button"].btnCirclePink {
+    background: #ca2470;
+}
+
+
+.checkbox {
+    position: absolute;
+    z-index: -1;
+    opacity: 0;
+    margin: 10px 0 0 20px;
+}
+
+.checkbox + label {
+    position: relative;
+    padding: 0 0 0 60px;
+    cursor: pointer;
+}
+
+.checkbox + label:before {
+    content: '';
+    position: absolute;
+    top: -4px;
+    left: 0;
+    width: 50px;
+    height: 20px;
+    border-radius: 5px;
+    border: 1px solid green;
+    transition: 400ms;
+}
+
+.checkbox + label:after {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: 2px;
+    width: 22px;
+    height: 18px;
+    border-radius: 3px;
+    background: green;
+    transition: .2s;
+}
+
+.checkbox:checked + label:before {
+    border-color: red;
+}
+
+.checkbox:checked + label:after {
+    background: red;
+}
+
+.checkbox:checked + label:after {
+    left: 26px;
+}
