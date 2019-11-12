@@ -4,9 +4,9 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import java.io.FileInputStream;
+//import java.io.FileInputStream;
 import java.io.IOException;
-import java.io.ObjectInputStream;
+//import java.io.ObjectInputStream;
 import java.io.PrintWriter;
 
 public class AuthorizationServlet extends HttpServlet {
@@ -16,7 +16,7 @@ public class AuthorizationServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         String login = req.getParameter("login");
-        String password =  req.getParameter("password");
+        String password = req.getParameter("password");
         PrintWriter writer = resp.getWriter();
         writer.println("<p>" +
                 "<head>" +
@@ -45,41 +45,34 @@ public class AuthorizationServlet extends HttpServlet {
         writer.println("<head>" +
                 "<style>" +
                 "table{" +
+                "with:100%" +
                 "border:1px solid #ccc;" +
-                " margin:20px;" +
+                " margin:20px 0 0 20px;" +
                 "border-collapse:collapse;}" +
                 "th{" +
+                "with:180;" +
                 "border:1px solid #ccc;" +
                 " padding:20px;}" +
                 "td{" +
                 "border:1px solid #ccc;" +
                 " padding:20px;}" +
-                "</style>"+
+                "</style>" +
                 "</head>");
-        if(login.equals(LOGIN)&&password.equals(PASSWORD)){
-            FileInputStream fileInputStream= new FileInputStream("C:\\save.ser");
-            ObjectInputStream objectInputStream = new ObjectInputStream(fileInputStream);
-            SaveDataRegistration dataRegistration= null;
-            try {
-                dataRegistration = (SaveDataRegistration) objectInputStream.readObject();
-                writer.println("<table>" +
-                        "<tr>" +
-                        "<th>Id</th>" +
-                        "<th>Login</th>" +
-                        "<th>Password</th>" +
-                        "<th>Gender</th>" +
-                        "<th>Phone</th>" +
-                        "<th>Email</th>" +
-                        "<th>Subscribe</th>" +
-                        "</tr>"+
-                        "</table>");
-                writer.println(dataRegistration);
-            } catch (ClassNotFoundException e) {
-                e.printStackTrace();
-            }
-        }
-       else{
-            writer.println("This is "+ login+" account!"+ login+" don't admin or invalid password...");
+        if (login.equals(LOGIN) && password.equals(PASSWORD)) {
+
+            writer.println("<table>" +
+                    "<tr>" +
+                    "<th>Id</th>" +
+                    "<th>Login</th>" +
+                    "<th>Password</th>" +
+                    "<th>Gender</th>" +
+                    "<th>Phone</th>" +
+                    "<th>Email</th>" +
+                    "<th>Subscribe</th>" +
+                    "</tr>");
+            writer.print(SaveDataRegistration.builder);
+        } else {
+            writer.println("This is " + login + " account!" + login + " don't admin or invalid password...");
         }
     }
 }

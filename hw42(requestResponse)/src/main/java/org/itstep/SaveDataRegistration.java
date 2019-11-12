@@ -11,7 +11,7 @@ public class SaveDataRegistration implements Serializable {
     private ArrayList<String> phones = new ArrayList<>();
     private ArrayList<String> emails = new ArrayList<>();
     private ArrayList<String> subscribes = new ArrayList<>();
-    private static StringBuilder builder = new StringBuilder();
+    static StringBuilder builder = new StringBuilder();
 
     void addData(String login, String password, String gender, String phone, String email, String subscribe) {
         i++;
@@ -21,30 +21,28 @@ public class SaveDataRegistration implements Serializable {
         phones.add(phone);
         emails.add(email);
         subscribes.add(subscribe);
-        builder.append(
-                "<tr>" +
-                        "<td>" +
-                        i +
-                        "</td>" +
-                        "<td>" +
-                        logins.get(i - 1) +
-                        "</td>" +
-                        "<td>" +
-                        passwords.get(i - 1) +
-                        "</td>" +
-                        "<td>" +
-                        genders.get(i - 1) +
-                        "</td>" +
-                        "<td>" +
-                        phones.get(i - 1) +
-                        "</td>" +
-                        "<td>" +
-                        emails.get(i - 1) +
-                        "</td>" +
-                        "<td>" +
-                        subscribes.get(i - 1) +
-                        "</td>" +
-                "</tr>"
-        );
+        builder.append("<tr>" +
+                "<td>" +
+                i +
+                "</td>" +
+                "<td>" +
+                logins.get(i - 1) +
+                "</td>" +
+                "<td>" +
+                passwords.get(i - 1) +
+                "</td>" +
+                "<td>" +
+                genders.get(i - 1) +
+                "</td>" +
+                "<td>" +
+                phones.get(i - 1) +
+                "</td>" +
+                "<td>" +
+                emails.get(i - 1) +
+                "</td>" +
+                "<td>" +
+                subscribes.get(i - 1) +
+                "</td>" +
+                "</tr>");
     }
 }
