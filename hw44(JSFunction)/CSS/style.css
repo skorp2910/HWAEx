@@ -1,0 +1,12 @@
+div{
+    margin: 10px;
+    color: green;
+    width: 60px;
+    height: 30px;
+    background: yellow;
+    border: 1px solid blue;
+    border-radius: 5px;
+    text-align: center;
+    line-height: 30px;
+    font-weight: bold;
+}
