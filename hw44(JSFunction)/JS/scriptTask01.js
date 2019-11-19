@@ -1,29 +1,34 @@
 'use strict';
-let color;
-
-function setColor() {
-    let color;
-    if (Math.floor(Math.random() * 100) <= 50) {
-        window.color = "red";
-        return window.color;
-    } else {
-        color="black";
-        return color;
+var color = "red";
+//Задание цвета локальной и глобальной переменной с вероятностью 50%
+function setColorRandom() {
+    var color;
+    return function () {
+        if (Math.floor(Math.random() * 100) <= 50) {
+            return window.color = "red";
+        } else {
+            return color = "black";
+        }
     }
 }
-function printColor(){
-    let color;
-    setColor();
-    console.log(`Local color = ${color} global color = ${window.color}`);
+//Задание черного цвета локальной переменной
+function setColor() {
+    var color;
+    return function () {
+        return color = "black";
+    }
 }
+//Вывод в консоль цвета локальной и глобальной переменной
+function printColor() {
+    var color = setColor();
+    console.log(`Local color = ${color()} global color = ${window.color}`);
+}
+
 printColor();
-color=setColor();
+
+color = setColorRandom();
 drawBox(color);
 
-function drawBox() {
-    document.writeln(`<div style="background:${color};color:white;height:20px;width:200px;text-align:center">This is Div with text</div>`)
+function drawBox(color) {
+    document.writeln(`<div style="background:${color()};color:white;height:20px;width:200px;text-align:center">This is Div with text</div>`)
 }
-
-
-
-
