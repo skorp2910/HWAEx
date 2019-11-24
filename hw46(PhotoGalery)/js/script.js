@@ -44,15 +44,14 @@ class Gallery {
     static runSlide() {
 
         let DELAY;
-        let time;
         let timerId;
         let reg = /^[0-9]+$/;
-        time = prompt("Задайте время перехода между изображениями(сек.): ");
+        let time = prompt("Задайте время перехода между изображениями(сек.): ");
         if (reg.test(time)) {
             DELAY = +time * 1000;
             timerId = setInterval(function () {
                 Gallery.nextImg();
-                Gallery.fade(imgElem, 2000, 100);
+                Gallery.fade(imgElem, 1000, 50);
                 Gallery.statistic();
             }, DELAY);
         } else {
