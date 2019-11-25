@@ -12,6 +12,7 @@ let photosCars = ["photo_avto/_peugeot1.jpg", "photo_avto/audi-tt-sportback.jpg"
     "photo_avto/Skoda_Octavia_5.jpg", "photo_avto/skoda_rapid.jpg", "photo_avto/skoda_rapid2.jpeg", "photo_avto/skoda_rapid3.jpg",
     "photo_avto/toyota.jpg", "photo_avto/toyota-86.jpg", "photo_avto/toyota-fj-cruiser.jpg", "photo_avto/Toyota-vitz.jpg",
     "photo_avto/volkswagen-golf.jpg", "photo_avto/volkswagen-s.jpg"];
+let timerId;
 
 class Gallery {
     constructor(photosCars) {
@@ -41,10 +42,10 @@ class Gallery {
         Gallery.statistic();
     }
 
-    static runSlide() {
 
+    static runSlide() {
         let DELAY;
-        let timerId;
+        // let timerId;
         let reg = /^[0-9]+$/;
         let time = prompt("Задайте время перехода между изображениями(сек.): ");
         if (reg.test(time)) {
@@ -58,10 +59,11 @@ class Gallery {
             alert("Введите цифровое значение!")
         }
 
-        stopSlide.onclick = function () {
-            clearInterval(timerId);
-        };
     }
+
+    static stopSlide() {
+        clearInterval(timerId);
+    };
 
     static statistic() {
         numberNumbers[0].innerHTML = ` ${i} in ${gallery.photosCars.length}`;
@@ -113,6 +115,8 @@ nextBtn.onclick = Gallery.nextImg;
 previousBtn.onclick = Gallery.prevImg;
 
 runSlide.onclick = Gallery.runSlide;
+
+stopSlide.onclick = Gallery.stopSlide;
 
 Gallery.statistic();
 
