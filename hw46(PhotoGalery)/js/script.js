@@ -45,7 +45,6 @@ class Gallery {
 
     static runSlide() {
         let DELAY;
-        // let timerId;
         let reg = /^[0-9]+$/;
         let time = prompt("Задайте время перехода между изображениями(сек.): ");
         if (reg.test(time)) {
