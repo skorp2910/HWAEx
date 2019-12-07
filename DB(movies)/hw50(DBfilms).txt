@@ -1,0 +1,94 @@
+create database if not exists films default charset utf8;
+use films;
+create table if not exists genres
+(
+    genreID   int primary key auto_increment,
+    genreName varchar(20) not null
+);
+create table if not exists directors
+(
+    directorId  int primary key auto_increment,
+    firstName   varchar(25) not null,
+    lastName    varchar(30) not null,
+    nationality varchar(25) not null,
+    birth       date        not null
+);
+
+create table if not exists movies
+(
+    movieID     int primary key auto_increment,
+    title       varchar(40)  not null,
+    releaseYear int          not null,
+    rating      float,
+    plot        varchar(100) not null,
+    movieLength float        not null,
+    director_id INT
+);
+
+
+
+create table if not exists actors
+(
+    actorId     int primary key auto_increment,
+    firstName   varchar(25) not null,
+    lastName    varchar(30) not null,
+    nationality varchar(35) not null,
+    birth       date        not null
+);
+create table if not exists movieGenres
+(
+    movieID int,
+    genreID int,
+    foreign key (movieID) references movies (movieID),
+    foreign key (genreID) references genres (genreID)
+);
+create table if not exists movieActor
+(
+    movieID int,
+    actorID int,
+    foreign key (movieID) references movies (movieID),
+    foreign key (actorID) references actors (actorID)
+);
+insert into `genres`(genreName)
+values ('fantastic'),
+       ('loveStory'),
+       ('history'),
+       ('documentation');
+
+insert into `actors`(`firstName`, `lastName`, `nationality`, `birth`)
+VALUES ('Victor', 'Kosolapov', 'ukrainian', '1988-10-29'),
+       ('Anastasia', 'Gromova', 'russian', '1999-05-08'),
+       ('Alex', 'Voronin', 'italian', '2001-12-02'),
+       ('Stepan', 'Bulba', 'belarusian', '2009-03-02'),
+       ('Jon', 'Vosmerkin', 'amarican', '2003-04-16'),
+       ('Oleg', 'Stepanenko', 'ukrainian', '1999-08-18');
+
+insert into `directors`(`firstName`, `lastName`, `nationality`, `birth`)
+VALUES ('Steven', 'Spielberg', 'american', '1966-01-30'),
+       ('Charlie', 'Chaplin', 'english', '1965-05-08'),
+       ('Alfred', 'Hitchcock', 'british', '1971-12-02'),
+       ('Akira', 'Kurosawa', 'japans', '1987-05-18'),
+       ('Stanley', 'Kubrick', 'amarican', '1999-03-12'),
+       ('Victor', 'Cosakovskiy', 'russian', '1975-03-17');
+alter table movies
+    add constraint movies_director_fk foreign key (director_id) references directors (directorId);
+insert into `movies` (title, releaseYear, rating, plot, movieLength, director_id)
+values ('film number one', 1988, 1.2, 'very interesting first film', 45.15, 1),
+       ('film number two', 2001, 1.5, 'very interesting second film', 30.45, 2),
+       ('film number three', 1966, 3.2, 'very interesting third film', 51.18, 3),
+       ('film number fore', 2012, 5.0, 'not very interesting film', 22.09, 2),
+       ('film number five', 2018, 2.2, 'not very interesting second film', 41.02, 4),
+       ('film number six', 1899, 1.9, 'very interesting film about animals', 48.05, 5),
+       ('film number seven', 1987, 7.2, 'not very interesting film about children', 36.56, 6);
+insert into `movieGenres` (movieID, genreID)
+VALUES (1, 2),
+       (2, 3),
+       (3, 4),
+       (4, 1),
+       (5, 3);
+insert into `movieActor`(movieID, actorID)
+VALUES (2, 1),
+       (3, 2),
+       (4, 3),
+       (5, 4),
+       (6, 6);
