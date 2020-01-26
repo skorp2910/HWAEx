@@ -1,0 +1,68 @@
+<!--<html>-->
+<!--<body>-->
+<!--<form action="addToDBFilms" method="post">-->
+<!--    <label for="login">Login</label>-->
+<!--    <input id="login" name="login" required placeholder="Your login"/><br>-->
+<!--    <label>Email:-->
+<!--        <input type="email" name="email" required placeholder="Your email"/><br>-->
+<!--    </label>-->
+<!--    <label>Password:-->
+<!--        <input type="password" name="password" required placeholder="Your password"/><br>-->
+<!--    </label>-->
+<!--    <button type="submit">Send</button>-->
+<!--</form>-->
+
+<!--<form action="showDBFilms" method="post">-->
+<!--    <label for="login1">Login</label>-->
+<!--    <input id="login1" name="login1" required placeholder="Your login1"/><br>-->
+<!--    <label>Email:-->
+<!--        <input type="email" name="email1" required placeholder="Your email"/><br>-->
+<!--    </label>-->
+<!--    <label>Password:-->
+<!--        <input type="password" name="password1" required placeholder="Your password"/><br>-->
+<!--    </label>-->
+<!--    <button type="submit">Send</button>-->
+<!--</form>-->
+<!--</body>-->
+<!--</html>-->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        form{
+            border: 2px solid #ccc;
+            width: 400px;
+            padding: 10px;
+            border-radius: 5px;
+        }
+        textarea{
+            padding: 10px;
+            border-radius: 4px;
+            border: 2px solid green;
+            resize: none;
+        }
+        button{
+            margin-left: 40%;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+<form action="search" method="post">
+    <p>Enter an expression to search for:
+        <label>
+<textarea name="search" cols="50" rows="25">
+    </textarea>
+        </label></p>
+    <button name="button"  type="submit" >
+        Send
+    </button>
+</form>
+</body>
+</html>
