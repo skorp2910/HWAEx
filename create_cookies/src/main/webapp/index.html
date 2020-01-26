@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Test</title>
+</head>
+<body>
+<form action="addCookie" method="post">
+    <p>Create cookie: </p>
+    <label> Create cookie key
+        <input type="text" name="key" placeholder="key" >
+    </label><br><br>
+    <label> Create cookie value
+        <input type="text" name="value" placeholder="value" >
+    </label><br><br>
+    <label> Create cookie life time
+        <input type="number" name="lifeTime" placeholder="life time">
+    </label><br><br>
+    <label> Create cookie domain
+        <input type="text" name="domain" placeholder="enter domain" >
+    </label><br><br>
+    <label> http
+        <input type="radio" name="http..." value="http" checked>
+    </label><br>
+    <label> https
+        <input type="radio" name="http..." value="https">
+    </label><br><br>
+    <button type="submit">
+        Create cookie
+    </button>
+</form><br><br>
+<form action="editCookie" method="post">
+    <p>Edit cookie:</p>
+    <label> Edit cookie key
+        <input type="text" name="key" placeholder="key" >
+    </label><br><br>
+    <label> Edit cookie value
+        <input type="text" name="value" placeholder="value" >
+    </label><br><br>
+    <label> Edit cookie life time
+        <input type="number" name="lifeTime" placeholder="life time">
+    </label><br><br>
+    <label> Edit cookie domain
+        <input type="text" name="domain" placeholder="enter domain" >
+    </label><br><br>
+    <label> http
+        <input type="radio" name="http..." value="http" checked>
+    </label><br>
+    <label> https
+        <input type="radio" name="http..." value="https">
+    </label><br><br>
+    <button type="submit">
+        Edit cookie
+    </button>
+</form><br><br>
+<form action="deleteCookie" method="post">
+    <label> Key
+        <input type="text" name="key" placeholder="enter key for delete">
+    </label><br><br>
+    <button>Delete cookie</button>
+</form>
+</body>
+</html>
