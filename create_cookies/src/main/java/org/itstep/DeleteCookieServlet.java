@@ -12,6 +12,7 @@ import java.io.IOException;
 public class DeleteCookieServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        resp.setContentType("text/html");
         boolean del=false;
         String key = req.getParameter("key");
         if(!key.equals("")){

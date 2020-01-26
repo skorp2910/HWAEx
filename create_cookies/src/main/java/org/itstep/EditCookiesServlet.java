@@ -12,6 +12,7 @@ import java.io.IOException;
 public class EditCookiesServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        resp.setContentType("text/html");
         Cookie[] cookies = req.getCookies();
         Cookie cookie=null;
         boolean edit=false;
