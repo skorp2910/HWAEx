@@ -1,6 +1,24 @@
-table{
-    width: 100%;
-    border: 1px;
-    cellpadding:3px;
-    cellspacing:0
+table {
+    width: 50%;
+    padding: 3px;
+    border-collapse: collapse;
+    border: 3px solid black;
+}
+
+th, td {
+    border-collapse: collapse;
+    border: 1px solid grey;
+    padding: 4px;
+}
+
+td {
+    text-align: center;
+}
+
+button {
+    border-radius: 10px;
+    width: 100px;
+    height: 40px;
+    background-color: olivedrab;
+    color: white;
 }

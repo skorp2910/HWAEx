@@ -16,22 +16,25 @@
         <form method="post" action="add.jsp">
             <button>add</button>
         </form>
-    </label>
+    </label><br>
     <label> Edit CD
         <form method="post" action="edit.jsp">
             <button>edit</button>
         </form>
-    </label>
+    </label><br>
     <label> Delete CD
         <form method="post" action="delete.jsp">
             <button>delete</button>
         </form>
-    </label>
+    </label><br>
+</div>
+<div>
     <%
-        if(session.isNew()){
-            session.setAttribute("cd", new ArrayList<>());
+        if (session.isNew()) {
+            session.setAttribute("cd", new ArrayList());
         }
     %>
+
     <table>
         <caption>List CD</caption>
         <thead>
@@ -42,23 +45,23 @@
         </thead>
         <tbody>
         <%
-            CD cd = null;
             List listCD = (List) session.getAttribute("cd");
             if (listCD != null) {
-                for (int i = 0; i < listCD.size(); i++) {
-                    cd = (CD) listCD.get(i);
-                }
-                assert cd != null;%>
+                for (Object o : listCD) {
+                    CD cd = (CD) o;
+        %>
         <tr>
             <td><%= cd.getName()%>
             </td>
             <td><%= cd.getPrice()%>
             </td>
         </tr>
-        <%}%>
+        <%
+                }
+            }
+        %>
         </tbody>
     </table>
-
 </div>
 </body>
 </html>
