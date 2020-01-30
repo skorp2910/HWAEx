@@ -45,15 +45,15 @@
         </thead>
         <tbody>
         <%
-            List listCD = (List) session.getAttribute("cd");
+            List<CD> listCD = (List<CD>) session.getAttribute("cd");
             if (listCD != null) {
-                for (Object o : listCD) {
-                    CD cd = (CD) o;
+                for (CD disk : listCD) {
+
         %>
         <tr>
-            <td><%= cd.getName()%>
+            <td><%= disk.getName()%>
             </td>
-            <td><%= cd.getPrice()%>
+            <td><%= disk.getPrice()%>
             </td>
         </tr>
         <%
