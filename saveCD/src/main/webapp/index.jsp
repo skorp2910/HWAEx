@@ -3,9 +3,10 @@
 <%@ page import="org.itstep.CD" %>
 <%@ page isELIgnored="false" %>
 <%@ page contentType="text/html;charset=UTF-8" pageEncoding="utf-8" %>
-
+<%   request.setCharacterEncoding("UTF-8");%>
 <html>
 <head>
+    <meta charset="utf-8">
     <link rel="stylesheet" href="resources/css/style.css">
     <title>Index</title>
 </head>
@@ -32,6 +33,7 @@
     <%
         if (session.isNew()) {
             session.setAttribute("cd", new ArrayList());
+
         }
     %>
 
@@ -39,8 +41,8 @@
         <caption>List CD</caption>
         <thead>
         <tr>
-            <th>Название</th>
-            <th>Стоимость</th>
+            <th>Name</th>
+            <th>Price</th>
         </tr>
         </thead>
         <tbody>
@@ -51,9 +53,9 @@
 
         %>
         <tr>
-            <td><%= disk.getName()%>
+            <td><%=disk.getName()%>
             </td>
-            <td><%= disk.getPrice()%>
+            <td><%= "$"+disk.getPrice()%>
             </td>
         </tr>
         <%

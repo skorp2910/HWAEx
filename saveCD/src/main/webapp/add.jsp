@@ -1,8 +1,11 @@
 <%@ page import="java.util.List" %>
 <%@ page import="org.itstep.CD" %>
-<%@ page contentType="text/html;charset=UTF-8" pageEncoding="utf-8" %>
+<%@ page pageEncoding="UTF-8" %>
+<%@ page contentType="text/html;charset=UTF-8" %>
+<%   request.setCharacterEncoding("UTF-8");%>
 <html>
 <head>
+    <meta charset="utf-8">
     <link rel="stylesheet" href="resources/css/style.css">
     <title>Add</title>
 </head>

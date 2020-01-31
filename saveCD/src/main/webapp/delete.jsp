@@ -1,6 +1,7 @@
 <%@ page import="java.util.List" %>
 <%@ page import="org.itstep.CD" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%   request.setCharacterEncoding("UTF-8");%>
 <html>
 <head>
     <link rel="stylesheet" href="resources/css/style.css">
