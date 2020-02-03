@@ -1,6 +1,5 @@
-package org.itstep;
+package org.itstep.servlets;
 
-import org.itstep.db.PostRepository;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -9,14 +8,11 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-@WebServlet(urlPatterns = "/", name = "home", loadOnStartup = 1)
-public class HomeServlet extends HttpServlet {
-
+@WebServlet(urlPatterns = "/services",name = "service")
+public class ServicesServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        req.setAttribute("posts", PostRepository.getInstance().getPosts());
-        RequestDispatcher requestDispatcher = req.getRequestDispatcher("/WEB-INF/jsp/index.jsp");
-        requestDispatcher.forward(req, resp);
+        RequestDispatcher requestDispatcher = req.getRequestDispatcher("/WEB-INF/jsp/services.jsp");
+        requestDispatcher.forward(req,resp);
     }
 }
-

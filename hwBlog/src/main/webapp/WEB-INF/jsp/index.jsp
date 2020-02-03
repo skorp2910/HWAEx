@@ -28,7 +28,8 @@
         <!-- Blog Post -->
         <div class="card mb-4">
           <% for(Post post:posts){%>
-          <img class="card-img-top" src="http://placehold.it/750x300" alt="Card image cap">
+          <img class="card-img-top" src="https://www.ixbt.com/img/n1/news/2019/8/3/Capture_3_large.JPG" alt="Card image cap">
+
           <div class="card-body">
             <h2 class="card-title">
 <%--              Post Title--%>
@@ -39,6 +40,8 @@
               <%=post.getContent()%>
             </p>
             <a href="#" class="btn btn-primary">Read More &rarr;</a>
+              <a href="#" class="btn btn-primary">Edit &rarr;</a>
+              <a href="#" class="btn btn-primary">Delete &rarr;</a>
           </div>
           <div class="card-footer text-muted">
 <%--            Posted on January 1, 2017 by--%>

@@ -13,6 +13,15 @@
                     </a>
                 </li>
                 <li class="nav-item">
+                    <a class="nav-link" href="<%=request.getContextPath()%>/authorization">Sign in</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="<%=request.getContextPath()%>/exit">Sign out</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="<%=request.getContextPath()%>/create">Create post</a>
+                </li>
+                <li class="nav-item">
                     <a class="nav-link" href="<%=request.getContextPath()%>/about">About</a>
                 </li>
                 <li class="nav-item">

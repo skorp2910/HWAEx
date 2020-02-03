@@ -1,4 +1,4 @@
-package org.itstep;
+package org.itstep.servlets;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;

@@ -17,18 +17,23 @@ public class PostRepository {
         return instance;
     }
 
+
     public CopyOnWriteArrayList<Post> getPosts() {
         return posts;
     }
 
+    public void save(Post post){
+        posts.add(post);
+    }
+
     private void init() {
-        posts.add(Post.builder().title("Post Title")
+        posts.add(Post.builder().title("Перый пост")
                 .content("Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis aliquid atque, nulla? Quos cum ex quis soluta, a laboriosam. Dicta expedita corporis animi vero voluptate voluptatibus possimus, veniam magni quis!")
                 .published(new Date()).build());
-        posts.add(Post.builder().title("Post Title")
+        posts.add(Post.builder().title("Второй пост")
                 .content("Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis aliquid atque, nulla? Quos cum ex quis soluta, a laboriosam. Dicta expedita corporis animi vero voluptate voluptatibus possimus, veniam magni quis!")
                 .published(new Date()).build());
-        posts.add(Post.builder().title("Post Title")
+        posts.add(Post.builder().title("Третий пост")
                 .content("Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis aliquid atque, nulla? Quos cum ex quis soluta, a laboriosam. Dicta expedita corporis animi vero voluptate voluptatibus possimus, veniam magni quis!")
                 .published(new Date()).build());
     }
