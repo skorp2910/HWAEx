@@ -37,12 +37,10 @@
                           <%=post.getTitle()%>
                       </h2>
                       <p class="card-text">
-                          <%--              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis aliquid atque, nulla? Quos cum ex quis soluta, a laboriosam. Dicta expedita corporis animi vero voluptate voluptatibus possimus, veniam magni quis!--%>
                           <%=post.getContent()%>
                       </p>
                       <a href="#" class="btn btn-primary">Read More &rarr;</a>
 
-<%--                          <a href="<%=request.getContextPath()%>/edit?id=<%=post.getId()%>&title=<%=post.getTitle()%>&content=<%=post.getContent()%>" class="btn btn-primary">Edit &rarr;</a>--%>
                       <a href="<%=request.getContextPath()%>/edit?id=<%=post.getId()%>" class="btn btn-primary">Edit &rarr;</a>
                       <a class="btn btn-primary" href="<%=request.getContextPath()%>/delete?id=<%=post.getId()%>">Delete</a>
 
