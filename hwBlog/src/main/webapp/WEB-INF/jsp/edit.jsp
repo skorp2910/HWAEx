@@ -1,5 +1,6 @@
 <%@ page import="org.itstep.db.Post" %>
 <%@ page import="java.util.concurrent.CopyOnWriteArrayList" %>
+<%@ page contentType="text/html;charset=UTF-8" %>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -15,7 +16,6 @@
 <%@include file="include/navigation.jsp" %>
 <!-- Page Content -->
 <div class="container">
-
     <div class="row">
 
         <!-- Post Content Column -->
@@ -23,13 +23,16 @@
             <hr>
 
             <!-- Preview Image -->
-            <img class="img-fluid rounded" src="https://prodaga.com/wp-content/uploads/2018/03/024.telegram.prodaga.com_.jpg" alt="post edit">
+            <img class="img-fluid rounded"
+                 src="https://prodaga.com/wp-content/uploads/2018/03/024.telegram.prodaga.com_.jpg" alt="post edit">
 
-            <hr><br>
+            <hr>
+            <br>
+            <% CopyOnWriteArrayList<Post> posts = (CopyOnWriteArrayList<Post>) request.getAttribute("posts");%>
 
             <form method="post">
                 <label for="title">Title</label>
-                <input name="title" id="title"><br>
+                <input name="title" id="title" type="text"><br>
                 <%--                <label for="subtitle">Subtitle</label>--%>
                 <%--                <input name="subtitle" id="subtitle"><br>--%>
                 <%--                <label for="author">Author</label>--%>

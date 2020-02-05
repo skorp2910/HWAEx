@@ -59,21 +59,28 @@ public class PostRepository {
         }
     }
     public void edit(int id,String newTitle,String newContent){
-        for (Post p: posts){
-            if (id==(p.getId())){
-                if(!"".equals(newTitle)){
-                    p.setTitle(newTitle);
-                }else {
-                    p.setTitle(p.getTitle());
-                }
-                if(!"".equals(newContent)){
-                    p.setContent(newContent);
-                }else {
-                    p.setContent(p.getContent());
-                }
-                p.setId(p.getId());
+        Post post = find(id);
+
+        if (post != null) {
+            if("".equals(newTitle)){
+                post.setTitle(post.getTitle());
+            }else {
+                post.setTitle(newTitle);
+            }
+            if("".equals(newContent)){
+                post.setContent(post.getContent());
+            }else {
+                post.setContent(newContent);
             }
         }
+    }
+
+    private Post find(int id) {
+        for (Post p: posts) {
+            if (p.getId() == id)
+                return  p;
+        }
+        return null;
     }
 
 }

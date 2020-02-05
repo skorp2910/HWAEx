@@ -42,8 +42,8 @@
                       </p>
                       <a href="#" class="btn btn-primary">Read More &rarr;</a>
 
-                          <a href="<%=request.getContextPath()%>/edit?id=<%=post.getId()%>&title=<%=post.getTitle()%>&content=<%=post.getContent()%>" class="btn btn-primary">Edit &rarr;</a>
-
+<%--                          <a href="<%=request.getContextPath()%>/edit?id=<%=post.getId()%>&title=<%=post.getTitle()%>&content=<%=post.getContent()%>" class="btn btn-primary">Edit &rarr;</a>--%>
+                      <a href="<%=request.getContextPath()%>/edit?id=<%=post.getId()%>" class="btn btn-primary">Edit &rarr;</a>
                       <a class="btn btn-primary" href="<%=request.getContextPath()%>/delete?id=<%=post.getId()%>">Delete</a>
 
                   </div>

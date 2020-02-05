@@ -4,6 +4,6 @@
     <title>About</title>
 </head>
 <body>
-    <h2>Hello in about page</h2>
+<h2>Hello in about page</h2>
 </body>
 </html>

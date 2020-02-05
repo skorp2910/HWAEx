@@ -10,7 +10,7 @@ import java.io.IOException;
 @WebFilter(filterName = "encodingFilter",
         servletNames = {"about","contact","home","post","service","create","exit","authorization","delete","edit"},
         initParams = {
-        @WebInitParam(name = "encoding",value = "UTF8")
+        @WebInitParam(name = "encoding",value = "UTF-8")
 })
 public class EncodingFilter implements Filter {
     String encoding;

@@ -33,8 +33,8 @@ public class AuthorizationServlet extends HttpServlet {
 
     private void generatingPerson() {
         people.add(new Person("admin", "admin", "all"));
-        people.add(new Person("Vasyliy","123","onlyRead"));
-        people.add(new Person("Masha","333","onlyRead"));
+        people.add(new Person("Vasyliy", "123", "onlyRead"));
+        people.add(new Person("Masha", "333", "onlyRead"));
     }
 
     @Override
@@ -43,31 +43,31 @@ public class AuthorizationServlet extends HttpServlet {
         String password = req.getParameter("password");
         String admin = "admin";
         String passwordAdm = "admin";
-        if(name!=null && password!=null){
-            for(Person p :people){
-                if(name.equals(p.getName())&& password.equals(p.getPassword())){
+        if (name != null && password != null) {
+            for (Person p : people) {
+                if (name.equals(p.getName()) && password.equals(p.getPassword())) {
                     HttpSession session = req.getSession();
                     Object auth = session.getAttribute("auth");
                     Object authAdmin = session.getAttribute("authAdmin");
-                    if(auth != null){
+                    if (auth != null) {
                         session.removeAttribute("auth");
                     }
-                    if(authAdmin != null){
+                    if (authAdmin != null) {
                         session.removeAttribute("authAdmin");
                     }
-                    session.setAttribute("auth",true);
-                    session.setAttribute("name",p.getName());
-                    System.out.println("Hello "+ p.getName());
-                    if(name.equals(admin)&& password.equals(passwordAdm)){
-                        session.setAttribute("authAdmin",true);
-                        resp.sendRedirect(req.getContextPath()+ "/create");
-                    }else {
-                        resp.sendRedirect(req.getContextPath()+ "/");
+                    session.setAttribute("auth", true);
+                    session.setAttribute("name", p.getName());
+                    System.out.println("Hello " + p.getName());
+                    if (name.equals(admin) && password.equals(passwordAdm)) {
+                        session.setAttribute("authAdmin", true);
+                        resp.sendRedirect(req.getContextPath() + "/index");
+                    } else {
+                        resp.sendRedirect(req.getContextPath() + "/");
                     }
                     return;
                 }
             }
-            resp.sendRedirect(req.getContextPath()+ "/authorization");
+            resp.sendRedirect(req.getContextPath() + "/authorization");
         }
     }
 }

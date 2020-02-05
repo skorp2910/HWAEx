@@ -16,18 +16,15 @@ public class EditServlet extends HttpServlet {
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         RequestDispatcher requestDispatcher = req.getRequestDispatcher("/WEB-INF/jsp/edit.jsp");
         requestDispatcher.forward(req, resp);
-        System.out.println("Hello GetEdit");
     }
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        System.out.println("Hello PostEdit");
         String id = (req.getParameter("id"));
         String title = req.getParameter("title");
-        String context = req.getParameter("context");
-        System.out.println(id);
+        String content = req.getParameter("content");
         if (id != null) {
-            PostRepository.getInstance().edit(Integer.parseInt(id), title, context);
+            PostRepository.getInstance().edit(Integer.parseInt(id), title, content);
         }
         resp.sendRedirect(getServletContext().getContextPath());
     }

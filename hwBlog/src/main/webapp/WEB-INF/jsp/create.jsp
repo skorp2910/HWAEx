@@ -25,15 +25,16 @@
             <!-- Preview Image -->
             <img class="img-fluid rounded" src="https://i.ytimg.com/vi/fE4T63Fh27E/maxresdefault.jpg" alt="create post">
 
-            <hr><br>
+            <hr>
+            <br>
 
             <form method="post">
                 <label for="title">Title</label>
                 <input name="title" id="title"><br>
-<%--                <label for="subtitle">Subtitle</label>--%>
-<%--                <input name="subtitle" id="subtitle"><br>--%>
-<%--                <label for="author">Author</label>--%>
-<%--                <input name="author" id="author"><br>--%>
+                <%--                <label for="subtitle">Subtitle</label>--%>
+                <%--                <input name="subtitle" id="subtitle"><br>--%>
+                <%--                <label for="author">Author</label>--%>
+                <%--                <input name="author" id="author"><br>--%>
                 <label for="content">Content</label><br>
                 <textarea id="content" name="content"></textarea><br>
                 <input type="submit"/>

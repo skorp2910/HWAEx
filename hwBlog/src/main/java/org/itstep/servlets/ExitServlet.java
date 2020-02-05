@@ -22,8 +22,7 @@ public class ExitServlet extends HttpServlet {
         if(authAdmin != null){
             session.removeAttribute("authAdmin");
         }
-//        RequestDispatcher requestDispatcher = req.getRequestDispatcher("/WEB-INF/jsp/exit.jsp");
-//        requestDispatcher.forward(req,resp);
+
         resp.sendRedirect(req.getContextPath()+ "/authorization");
     }
 }
