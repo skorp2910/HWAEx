@@ -20,6 +20,12 @@ public class AuthorizationServlet extends HttpServlet {
     private List<Person> people = new ArrayList<>();
 
     @Override
+    public void init() throws ServletException {
+        super.init();
+        generatingPerson();
+    }
+
+    @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         RequestDispatcher requestDispatcher = req.getRequestDispatcher("/WEB-INF/jsp/authorization.jsp");
         requestDispatcher.forward(req, resp);
@@ -35,16 +41,33 @@ public class AuthorizationServlet extends HttpServlet {
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         String name = req.getParameter("name");
         String password = req.getParameter("password");
-        for(Person p :people){
-            if(name.equals(p.getName())&& password.equals(p.getPassword())){
-                HttpSession session = req.getSession();
-                session.setAttribute("auth",true);
-                System.out.println("Hello "+ p.getName());
-                resp.sendRedirect(req.getContextPath()+ "/");
-                break;
-            }else {
-                resp.sendRedirect(req.getContextPath()+ "/authorization");
+        String admin = "admin";
+        String passwordAdm = "admin";
+        if(name!=null && password!=null){
+            for(Person p :people){
+                if(name.equals(p.getName())&& password.equals(p.getPassword())){
+                    HttpSession session = req.getSession();
+                    Object auth = session.getAttribute("auth");
+                    Object authAdmin = session.getAttribute("authAdmin");
+                    if(auth != null){
+                        session.removeAttribute("auth");
+                    }
+                    if(authAdmin != null){
+                        session.removeAttribute("authAdmin");
+                    }
+                    session.setAttribute("auth",true);
+                    session.setAttribute("name",p.getName());
+                    System.out.println("Hello "+ p.getName());
+                    if(name.equals(admin)&& password.equals(passwordAdm)){
+                        session.setAttribute("authAdmin",true);
+                        resp.sendRedirect(req.getContextPath()+ "/create");
+                    }else {
+                        resp.sendRedirect(req.getContextPath()+ "/");
+                    }
+                    return;
+                }
             }
+            resp.sendRedirect(req.getContextPath()+ "/authorization");
         }
     }
 }

@@ -8,7 +8,7 @@ import javax.servlet.http.HttpServletRequest;
 import java.io.IOException;
 
 @WebFilter(filterName = "encodingFilter",
-        servletNames = {"about","contact","home","post","service","create","exit","authorization"},
+        servletNames = {"about","contact","home","post","service","create","exit","authorization","delete","edit"},
         initParams = {
         @WebInitParam(name = "encoding",value = "UTF8")
 })

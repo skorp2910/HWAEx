@@ -30,6 +30,10 @@
                 <li class="nav-item">
                     <a class="nav-link" href="<%=request.getContextPath()%>/contact">Contact</a>
                 </li>
+                <li class="nav-item">
+                    <h6 class="nav-link">Hello, <%= session.getAttribute("name")%>
+                    </h6>
+                </li>
             </ul>
         </div>
     </div>

@@ -23,17 +23,17 @@
             <hr>
 
             <!-- Preview Image -->
-            <img class="img-fluid rounded" src="https://i.ytimg.com/vi/fE4T63Fh27E/maxresdefault.jpg" alt="create post">
+            <img class="img-fluid rounded" src="https://prodaga.com/wp-content/uploads/2018/03/024.telegram.prodaga.com_.jpg" alt="post edit">
 
             <hr><br>
 
             <form method="post">
                 <label for="title">Title</label>
                 <input name="title" id="title"><br>
-<%--                <label for="subtitle">Subtitle</label>--%>
-<%--                <input name="subtitle" id="subtitle"><br>--%>
-<%--                <label for="author">Author</label>--%>
-<%--                <input name="author" id="author"><br>--%>
+                <%--                <label for="subtitle">Subtitle</label>--%>
+                <%--                <input name="subtitle" id="subtitle"><br>--%>
+                <%--                <label for="author">Author</label>--%>
+                <%--                <input name="author" id="author"><br>--%>
                 <label for="content">Content</label><br>
                 <textarea id="content" name="content"></textarea><br>
                 <input type="submit"/>
@@ -55,4 +55,5 @@
 </body>
 
 </html>
+
 
