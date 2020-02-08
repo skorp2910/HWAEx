@@ -1,18 +1,22 @@
-<%@ page import="org.itstep.db.Post" %>
-<%@ page import="java.util.concurrent.CopyOnWriteArrayList" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@page isELIgnored="false" %>
+<%--<%@ page import="org.itstep.db.Post" %>--%>
+<%--<%@ page import="java.util.concurrent.CopyOnWriteArrayList" %>--%>
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
 
-    <%@include file="include/header.jsp" %>
+    <%--    <%@include file="include/header.jsp" %>--%>
+    <c:import url="include/header.jsp"/>
 
 </head>
 
 <body>
 
 <!-- Navigation -->
-<%@include file="include/navigation.jsp" %>
+<%--<%@include file="include/navigation.jsp" %>--%>
+<c:import url="include/navigation.jsp"/>
 <!-- Page Content -->
 <div class="container">
 
@@ -135,11 +139,13 @@
         </div>
 
         <!-- Sidebar Widgets Column -->
-        <%@include file="include/sidebar.jsp" %>
+        <%--        <%@include file="include/sidebar.jsp" %>--%>
+        <c:import url="include/sidebar.jsp"/>
         <!-- /.container -->
 
         <!-- Footer -->
-        <%@include file="include/footer.jsp" %>
+        <%--        <%@include file="include/footer.jsp" %>--%>
+        <c:import url="include/footer.jsp"/>
 
         <!-- Bootstrap core JavaScript -->
         <script src="static/vendor/jquery/jquery.min.js"></script>

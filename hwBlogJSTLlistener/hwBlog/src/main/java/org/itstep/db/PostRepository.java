@@ -5,14 +5,14 @@ import java.util.concurrent.CopyOnWriteArrayList;
 
 
 public class PostRepository {
-    private int id=0;
+    private int id = 0;
     CopyOnWriteArrayList<Post> posts;
 
     public void setId(int id) {
         this.id = id;
     }
 
-    public  int getId() {
+    public int getId() {
         return id;
     }
 
@@ -32,7 +32,7 @@ public class PostRepository {
         return posts;
     }
 
-    public void save(Post post){
+    public void save(Post post) {
 
         posts.add(post);
     }
@@ -51,34 +51,36 @@ public class PostRepository {
                 .content("Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis aliquid atque, nulla? Quos cum ex quis soluta, a laboriosam. Dicta expedita corporis animi vero voluptate voluptatibus possimus, veniam magni quis!")
                 .published(new Date()).build());
     }
-    public void delete(int id){
-        for(Post p: posts){
-            if(id==(p.getId())){
+
+    public void delete(int id) {
+        for (Post p : posts) {
+            if (id == (p.getId())) {
                 posts.remove(p);
             }
         }
     }
-    public void edit(int id,String newTitle,String newContent){
+
+    public void edit(int id, String newTitle, String newContent) {
         Post post = find(id);
 
         if (post != null) {
-            if("".equals(newTitle)){
+            if ("".equals(newTitle)) {
                 post.setTitle(post.getTitle());
-            }else {
+            } else {
                 post.setTitle(newTitle);
             }
-            if("".equals(newContent)){
+            if ("".equals(newContent)) {
                 post.setContent(post.getContent());
-            }else {
+            } else {
                 post.setContent(newContent);
             }
         }
     }
 
     private Post find(int id) {
-        for (Post p: posts) {
+        for (Post p : posts) {
             if (p.getId() == id)
-                return  p;
+                return p;
         }
         return null;
     }

@@ -1,6 +1,7 @@
 package org.itstep.servlets;
 
 import org.itstep.db.Person;
+import org.itstep.listener.UserListener;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -55,6 +56,7 @@ public class AuthorizationServlet extends HttpServlet {
                     if (authAdmin != null) {
                         session.removeAttribute("authAdmin");
                     }
+                    session.setAttribute("count", UserListener.getCount());
                     session.setAttribute("auth", true);
                     session.setAttribute("name", p.getName());
                     System.out.println("Hello " + p.getName());

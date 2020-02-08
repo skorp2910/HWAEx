@@ -1,3 +1,5 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%--@elvariable id="posts" type="java/org.itstep/db/Post"--%>
 <%@ page import="org.itstep.db.Post" %>
 <%@ page import="java.util.concurrent.CopyOnWriteArrayList" %>
 <%@ page contentType="text/html;charset=UTF-8" %>
@@ -6,14 +8,16 @@
 
 <head>
 
-    <%@include file="include/header.jsp" %>
+    <%--    <%@include file="include/header.jsp" %>--%>
+    <c:import url="include/header.jsp"/>
 
 </head>
 
 <body>
 
 <!-- Navigation -->
-<%@include file="include/navigation.jsp" %>
+<%--<%@include file="include/navigation.jsp" %>--%>
+<c:import url="include/navigation.jsp"/>
 <!-- Page Content -->
 <div class="container">
     <div class="row">
@@ -28,7 +32,7 @@
 
             <hr>
             <br>
-            <% CopyOnWriteArrayList<Post> posts = (CopyOnWriteArrayList<Post>) request.getAttribute("posts");%>
+            <%--            <% CopyOnWriteArrayList<Post> posts = (CopyOnWriteArrayList<Post>) request.getAttribute("posts");%>--%>
 
             <form method="post">
                 <label for="title">Title</label>
@@ -45,11 +49,13 @@
         </div>
 
         <!-- Sidebar Widgets Column -->
-        <%@include file="include/sidebar.jsp" %>
+        <%--        <%@include file="include/sidebar.jsp" %>--%>
+        <c:import url="include/sidebar.jsp"/>
         <!-- /.container -->
 
         <!-- Footer -->
-        <%@include file="include/footer.jsp" %>
+        <%--        <%@include file="include/footer.jsp" %>--%>
+        <c:import url="include/footer.jsp"/>
 
         <!-- Bootstrap core JavaScript -->
         <script src="static/vendor/jquery/jquery.min.js"></script>

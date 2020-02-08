@@ -1,6 +1,8 @@
 package org.itstep.servlets;
 
 import org.itstep.db.PostRepository;
+import org.itstep.listener.UserListener;
+
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -15,6 +17,7 @@ public class HomeServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         req.setAttribute("posts", PostRepository.getInstance().getPosts());
+        req.setAttribute("count", UserListener.getCount());
         RequestDispatcher requestDispatcher = req.getRequestDispatcher("/WEB-INF/jsp/index.jsp");
         requestDispatcher.forward(req, resp);
     }
