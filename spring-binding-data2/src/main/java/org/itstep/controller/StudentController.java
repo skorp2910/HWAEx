@@ -40,7 +40,7 @@ public class StudentController {
         try {
             id = repository.save(student);
             message = "successfully saved";
-        } catch(Exception ex) {
+        } catch (Exception ex) {
             System.out.println(ex.getLocalizedMessage());
             message = "some error";
         }
@@ -54,23 +54,32 @@ public class StudentController {
         model.addAttribute("student", repository.find(id));
         return "students/info";
     }
+
     @GetMapping("/delete/{id}")
-    public String deleteStudent(@PathVariable int id)
-    {
+    public String deleteStudent(@PathVariable int id) {
         repository.delete(repository.find(id));
         return "redirect:/students";
     }
+
     @GetMapping("/update/{id}")
-    public String updateStudent(@PathVariable int id, Model model)
-    {
-        model.addAttribute("student",repository.find(id));
+    public String updateStudent(@PathVariable int id, Model model) {
+        model.addAttribute("student", repository.find(id));
         return "students/update";
     }
 
     @PostMapping("/update/{id}")
-    public String updateStudent(Student student) {
-        repository.update(student);
-        return "redirect:/students";
+    public String updateStudent(Student student, RedirectAttributes redirectAttributes) {
+        String message = "";
+        int id =0;
+        try {
+            message = "successfully saved";
+            id = student.getId();
+            repository.update(student);
+        } catch (Exception ex) {
+            System.out.println(ex.getLocalizedMessage());
+            message = "some error";
+        }
+        redirectAttributes.addFlashAttribute("error", message);
+        return "redirect:/students/info/" + id;
     }
-
 }

@@ -23,8 +23,8 @@
     </div>
 
     <div>
-        <label for="group">Group: </label>
-        <input name="group" id="group" required/>
+        <label for="groupId">Group: </label>
+        <input name="groupId" id="groupId" required/>
     </div>
 
     <div>

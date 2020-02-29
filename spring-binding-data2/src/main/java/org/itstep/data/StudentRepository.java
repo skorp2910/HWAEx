@@ -12,7 +12,11 @@ import java.util.Objects;
 
 @Repository
 public class StudentRepository implements org.itstep.data.Repository<Student, Integer> {
-
+    private RowMapper<Student> ROW_MAPPER = (rs, rowNum) -> new Student(rs.getInt("id"),
+            rs.getString("first_name"),
+            rs.getString("last_Name"),
+            rs.getInt("age"),
+            rs.getInt("groupId"));
 
     private JdbcTemplate jdbcTemplate;
 
@@ -26,12 +30,12 @@ public class StudentRepository implements org.itstep.data.Repository<Student, In
         GeneratedKeyHolder holder = new GeneratedKeyHolder();
         jdbcTemplate.update(con -> {
             PreparedStatement ps =
-                    con.prepareStatement("insert into students(first_name, last_name, age, `group`) values(?, ?, ?, ?)",
-                                         Statement.RETURN_GENERATED_KEYS);
+                    con.prepareStatement("insert into students(first_name, last_name, age, `groupId`) values(?, ?, ?, ?)",
+                            Statement.RETURN_GENERATED_KEYS);
             ps.setString(1, data.getFirstName());
             ps.setString(2, data.getLastName());
             ps.setInt(3, data.getAge());
-            ps.setString(4, data.getGroup());
+            ps.setInt(4, data.getGroupId());
             return ps;
         }, holder);
         return Objects.requireNonNull(holder.getKey()).intValue();
@@ -39,14 +43,15 @@ public class StudentRepository implements org.itstep.data.Repository<Student, In
 
     @Override
     public void update(Student data) {
-       jdbcTemplate.update("update `students` SET first_name= ?, last_name=?, age= ?,`group`=? where id = ?",
-               preparedStatement -> {
-                            preparedStatement.setString(1,data.getFirstName());
-                            preparedStatement.setString(2,data.getLastName());
-                            preparedStatement.setInt(3,data.getAge());
-                            preparedStatement.setString(4,data.getGroup());
-                            preparedStatement.setInt(5,data.getId());
-               });
+        jdbcTemplate.update("update `students` SET first_name= ?, last_name=?, age= ?,`groupId`=? where id = ?",
+                preparedStatement -> {
+                    preparedStatement.setString(1, data.getFirstName());
+                    preparedStatement.setString(2, data.getLastName());
+                    preparedStatement.setInt(3, data.getAge());
+                    preparedStatement.setInt(4, data.getGroupId());
+                    preparedStatement.setInt(5, data.getId());
+                });
+
     }
 
     @Override
@@ -57,17 +62,17 @@ public class StudentRepository implements org.itstep.data.Repository<Student, In
 
     @Override
     public List<Student> findAll() {
-        return jdbcTemplate.query("select id, first_name, last_name, age, `group` from students",
+        return jdbcTemplate.query("select id, first_name, last_name, age, `groupId` from students",
                 (rs, rowNum) -> new Student(rs.getInt("id"),
                         rs.getString("first_name"),
                         rs.getString("last_name"),
                         rs.getInt("age"),
-                        rs.getString("group")));
+                        rs.getInt("groupId")));
     }
 
     @Override
     public Student find(Integer id) {
+        return jdbcTemplate.queryForObject("select * from students where id = ?", new Object[]{id}, ROW_MAPPER);
 
-        return jdbcTemplate.queryForObject("select * from students where id = ?",new Object[]{id},ROW_MAPPER);
     }
 }

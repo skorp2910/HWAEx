@@ -24,8 +24,8 @@
     </div>
 
     <div>
-        <label for="group">Group: </label>
-        <input name="group" id="group" value="${student.group}"/>
+        <label for="groupId">Group: </label>
+        <input name="groupId" id="groupId" value="${student.groupId}"/>
     </div>
     <div>
         <input type="submit"/>

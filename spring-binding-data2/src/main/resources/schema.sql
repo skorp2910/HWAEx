@@ -6,7 +6,8 @@ create table students (
                           first_name varchar(255) not null,
                           last_name varchar(255) not null,
                           age int not null,
-                          `group` varchar(255) not null
+                          `groupId` int,
+                          foreign key (`groupId`) references `groups`(id) on delete SET NULL on update cascade
 );
 create table `groups`(
     id int primary key auto_increment,
