@@ -1,6 +1,7 @@
 package org.itstep.controller;
 
 import org.itstep.data.GroupRepository;
+import org.itstep.data.Repository;
 import org.itstep.model.Group;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -17,7 +18,7 @@ public class GroupController  {
     GroupRepository groupRepository;
 
     @Autowired
-    public GroupController(GroupRepository groupRepository){
+    public GroupController( GroupRepository groupRepository){
         this.groupRepository = groupRepository;
     }
 

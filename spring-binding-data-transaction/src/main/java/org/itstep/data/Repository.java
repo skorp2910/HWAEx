@@ -1,8 +1,5 @@
 package org.itstep.data;
 
-import org.itstep.model.Group;
-import org.itstep.model.Student;
-import org.springframework.jdbc.core.RowMapper;
 
 import java.util.List;
 

@@ -1,5 +1,7 @@
 package org.itstep.controller;
 
+import org.itstep.data.GroupRepository;
+import org.itstep.data.Repository;
 import org.itstep.data.StudentRepository;
 import org.itstep.model.Student;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,7 +17,7 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 @Controller
 public class StudentController {
 
-    StudentRepository repository;
+ StudentRepository repository;
 
     @Autowired
     public StudentController(StudentRepository repository) {
