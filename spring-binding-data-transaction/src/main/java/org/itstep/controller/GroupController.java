@@ -15,16 +15,16 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 @RequestMapping("/groups")
 @Controller
 public class GroupController  {
-    GroupRepository groupRepository;
+  Repository<Group,Integer> repository;
 
     @Autowired
-    public GroupController( GroupRepository groupRepository){
-        this.groupRepository = groupRepository;
+    public GroupController(Repository<Group,Integer> repository){
+        this.repository = repository;
     }
 
     @GetMapping
     public String index(Model model){
-        model.addAttribute("groups",groupRepository.findAll());
+        model.addAttribute("groups",repository.findAll());
         return "groups/index";
     }
 
@@ -38,7 +38,7 @@ public class GroupController  {
         String message = "";
         int id = 0;
         try{
-            id = groupRepository.save(group);
+            id = repository.save(group);
             message = "successfully saved";
         }catch (Exception ex){
             System.out.println(ex.getLocalizedMessage());
@@ -51,26 +51,26 @@ public class GroupController  {
 
     @GetMapping("/info/{id}")
     public String info(@PathVariable int id, Model model){
-        model.addAttribute("group",groupRepository.find(id));
+        model.addAttribute("group",repository.find(id));
         return "groups/info";
     }
 
     @GetMapping("/delete/{id}")
     public String deleteGroup(@PathVariable int id){
-        groupRepository.delete((groupRepository.find(id)));
+        repository.delete((repository.find(id)));
         return "redirect:/groups";
     }
 
     @GetMapping("/update/{id}")
     public String updateGroup(@PathVariable int id, Model model)
     {
-        model.addAttribute("group",groupRepository.find(id));
+        model.addAttribute("group",repository.find(id));
         return "groups/update";
     }
 
     @PostMapping("/update/{id}")
     public String updateGroup(Group group){
-        groupRepository.update(group);
+        repository.update(group);
         return "redirect:/groups";
     }
 

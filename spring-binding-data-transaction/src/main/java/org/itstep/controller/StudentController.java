@@ -17,10 +17,10 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 @Controller
 public class StudentController {
 
- StudentRepository repository;
+Repository<Student,Integer> repository;
 
     @Autowired
-    public StudentController(StudentRepository repository) {
+    public StudentController(Repository<Student,Integer> repository) {
         this.repository = repository;
     }
 
