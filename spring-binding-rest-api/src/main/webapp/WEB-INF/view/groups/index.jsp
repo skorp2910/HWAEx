@@ -9,6 +9,7 @@
 </head>
 <body>
 <h1>Groups</h1>
+<div>${error2}</div>
 <p><a href="<spring:url value="/groups/new"/>">Create group</a></p>
 <p><a href="<spring:url value="/students"/>">Students List</a></p>
 <table>

@@ -10,7 +10,6 @@
 <h1>Student Info</h1>
 
 <div>${error}</div>
-<div>${error2}</div>
 <div>
     <p>Id: ${student.id}</p>
     <p>First Name: ${student.firstName}</p>

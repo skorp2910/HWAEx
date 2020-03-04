@@ -58,8 +58,13 @@ Repository<Student,Integer> repository;
     }
 
     @GetMapping("/delete/{id}")
-    public String deleteStudent(@PathVariable int id) {
-        repository.delete(repository.find(id));
+    public String deleteStudent(@PathVariable int id,RedirectAttributes redirectAttributes) {
+        try{
+            repository.delete(repository.find(id));
+            redirectAttributes.addFlashAttribute("error2","Delete successfully");
+        }catch (Throwable ex){
+            redirectAttributes.addFlashAttribute("error2","Error: "+ ex.getLocalizedMessage());
+        }
         return "redirect:/students";
     }
 
