@@ -1,0 +1,38 @@
+GET http://localhost:8080/spring-binding-data/api/students
+Accept: application/json
+
+
+###
+GET http://localhost:8080/spring-binding-data/api/students/2
+
+Accept: application/json
+
+###
+POST http://localhost:8080/spring-binding-data/api/students
+Content-Type: application/json
+
+{
+  "firstName": "Вячеслав",
+  "lastName": "Смирнов",
+  "age": 34,
+  "groupId": 1
+}
+
+###
+DELETE http://localhost:8080/spring-binding-data/api/students/1
+
+Accept: application/json
+
+###
+
+PUT http://localhost:8080/spring-binding-data/api/students/3
+Content-Type: application/json
+
+{
+  "firstName": "Вячеславввв",
+  "lastName": "Смирновввв",
+  "age": 24,
+  "groupId": 2
+}
+
+###
